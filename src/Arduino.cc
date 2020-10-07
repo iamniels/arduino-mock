@@ -59,6 +59,40 @@ time_t millis(void) {
   return arduinoMock->getMillis();
 }
 
+uint8_t digitalPinToPort(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->digitalPinToPort(a);
+}
+uint8_t digitalPinToBitMask(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->digitalPinToBitMask(a);
+}
+uint8_t* portOutputRegister(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->portOutputRegister(a);
+}
+uint8_t* portInputRegister(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->portInputRegister(a);
+}
+
+uint8_t* digitalPinToPCICR(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->digitalPinToPCICR(a);
+}
+uint8_t digitalPinToPCICRbit(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->digitalPinToPCICRbit(a);
+}
+uint8_t* digitalPinToPCMSK(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->digitalPinToPCMSK(a);
+}
+uint8_t digitalPinToPCMSKbit(uint8_t a) {
+  assert (arduinoMock != NULL);
+  return arduinoMock->digitalPinToPCMSKbit(a);
+}
+
 time_t micros(void) {
   return 0;
 }

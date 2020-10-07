@@ -54,6 +54,16 @@ extern "C" {
 #define A6
 #define A7
 
+uint8_t digitalPinToPort( uint8_t );
+uint8_t digitalPinToBitMask( uint8_t );
+uint8_t* portOutputRegister( uint8_t );
+uint8_t* portInputRegister( uint8_t );
+
+uint8_t* digitalPinToPCICR( uint8_t );
+uint8_t digitalPinToPCICRbit( uint8_t );
+uint8_t* digitalPinToPCMSK( uint8_t );
+uint8_t digitalPinToPCMSKbit( uint8_t );
+
 typedef uint8_t boolean;
 typedef uint8_t byte;
 
@@ -138,6 +148,16 @@ class ArduinoMock {
     MOCK_METHOD1(analogRead, int (int));
     MOCK_METHOD1(delay, void (int));
     MOCK_METHOD0(millis, time_t ());
+
+    MOCK_METHOD1(digitalPinToPort, uint8_t(uint8_t));
+    MOCK_METHOD1(digitalPinToBitMask, uint8_t(uint8_t));
+    MOCK_METHOD1(portOutputRegister, uint8_t*(uint8_t));
+    MOCK_METHOD1(portInputRegister, uint8_t*(uint8_t));
+
+    MOCK_METHOD1(digitalPinToPCICR, uint8_t*(uint8_t));
+    MOCK_METHOD1(digitalPinToPCICRbit, uint8_t(uint8_t));
+    MOCK_METHOD1(digitalPinToPCMSK, uint8_t*(uint8_t));
+    MOCK_METHOD1(digitalPinToPCMSKbit, uint8_t(uint8_t));
 };
 ArduinoMock* arduinoMockInstance();
 void releaseArduinoMock();
