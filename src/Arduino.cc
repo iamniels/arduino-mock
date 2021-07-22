@@ -54,7 +54,7 @@ void analogWrite(uint8_t a, int b) {
 time_t millis(void) {
   assert (arduinoMock != NULL);
   const time_t sysTime = time(0) - SECS_YR_2000;
-  arduinoMock->setMillisRaw(sysTime*1000);
+  arduinoMock->setMillisRaw(sysTime*1000000);
   arduinoMock->millis();
   return arduinoMock->getMillis();
 }
