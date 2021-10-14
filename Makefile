@@ -10,7 +10,7 @@ CC = g++
 
 # Carpetas con includes
 INCLUDES += \
-	-I$(INSTALLPATH)/usr/local/include/ \
+	-I$(INSTALLPATH)/usr/local/inc/ \
 	$(TEST_INCLUDES)
 
 # Codigo fuente
@@ -44,7 +44,8 @@ clean:
 	rm -f $(OBJS) $(TARGET)
 
 install_hdr:
-	for hdr in $(HDRS); do install -D $$hdr $(INSTALLPATH)/usr/local/include/`basename $$hdr`; done
+	for hdr in $(HDRS); do install -D $$hdr $(INSTALLPATH)/usr/local/inc/`basename $$hdr`; done
+	for hdr in $(HDRS); do install -D $$hdr $(INSTALLPATH)/usr/local/inc/arduino-mock/`basename $$hdr`; done
 
 install_lib:
 	install -D $(TARGET) $(INSTALLPATH)/usr/local/lib/$(TARGET)
