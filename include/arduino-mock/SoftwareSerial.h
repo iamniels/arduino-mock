@@ -27,7 +27,7 @@ class SoftwareSerial : public Serial_ {
 
   public:
     SoftwareSerial( uint8_t receivePin, uint8_t transmitPin, bool inverse_logic = false ){};
-    ~SoftwareSerial(){};
+    virtual ~SoftwareSerial(){};
 
     //Arduino's SoftwareSerial methods not present in HardwareSerial
     virtual bool listen(){ return true; }
