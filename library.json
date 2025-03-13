@@ -1,0 +1,13 @@
+{
+    "name": "Arduino-mock",
+    "version": "1.0.0",
+    "description": "A GMock stub library for a mock of Arduino libraries.",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/iamniels/arduino-mock"
+    },
+    "build": {
+      "includeDir": "include"
+    }
+}
+  
